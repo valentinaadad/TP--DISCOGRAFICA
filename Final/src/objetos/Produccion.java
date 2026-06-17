@@ -28,15 +28,43 @@ public abstract class Produccion implements IPublicable, Serializable {
 
     public abstract double getDuracion();
 
-    public int getId() { return id; }
-    public String getTitulo() { return titulo; }
-    public String getGenero() { return genero; }
-    public int getAnio() { return anio; }
-    public EstadoProduccion getEstado() { return estado; }
+    public int getId() {
+        return id;
+    }
 
-    public void setId(int id) { this.id = id; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
-    public void setGenero(String genero) { this.genero = genero; }
-    public void setAnio(int anio) { this.anio = anio; }
-    public void setEstado(EstadoProduccion estado) { this.estado = estado; }
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public EstadoProduccion getEstado() {
+        return estado;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public void setEstado(EstadoProduccion estado) {
+        this.estado = estado;
+    }
 }

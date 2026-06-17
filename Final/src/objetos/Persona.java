@@ -1,7 +1,6 @@
 package objetos;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public abstract class Persona implements Serializable, Comparable <Persona> {
 
@@ -54,12 +53,21 @@ public abstract class Persona implements Serializable, Comparable <Persona> {
     //
     @Override
     public int hashCode() {
-        return Objects.hash(dni);
+        return dni;
     }
 
 
     //equals
-    @Override
-    public 
+    public boolean equals(Object obj){
+
+        if (this == obj) {
+            return true;
+        }
+        if(obj == null || getClass() != obj.getClass()){
+            return false;
+        }
+        Persona otraPer = (Persona) obj;
+        return this.dni== otraPer.dni;
+    }
 }
 
