@@ -48,7 +48,7 @@ public class Discografica {
     }
 
     public Produccion buscarProduccion(String titulo) {
-
+        //Buscar producción por título usando Stream.filter() + findFirst()
         return producciones.stream()
                 .filter(p -> p.getTitulo().equalsIgnoreCase(titulo))
                 .findFirst()
@@ -59,7 +59,7 @@ public class Discografica {
     // mostrar canciones publicadas, apafece en el UML DE MENU
 
     public void mostrarPublicadas() {
-
+        //punto filtrar producciones publicadas y retornar una nueva lista con collect(Collectors.toList())
         List<Produccion> publicadas = producciones.stream()
                 .filter(p -> p.getEstado() == EstadoProduccion.PUBLICADO)
                 .collect(Collectors.toList());
