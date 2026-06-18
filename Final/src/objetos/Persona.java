@@ -46,6 +46,7 @@ public abstract class Persona implements Serializable, Comparable <Persona> {
     public abstract void mostrarInfo();
 
     //compareTo
+    @Override
     public int compareTo(Persona otraPersona){
         return this.apellido.compareTo(otraPersona.apellido);
     }
@@ -58,6 +59,7 @@ public abstract class Persona implements Serializable, Comparable <Persona> {
 
 
     //equals
+    @Override
     public boolean equals(Object obj){
 
         if (this == obj) {

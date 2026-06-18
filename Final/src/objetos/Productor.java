@@ -16,6 +16,7 @@ public class Productor extends Persona {
         this.estudio = estudio;
     }
 
+    @Override
     public void mostrarInfo(){
         System.out.println("Nombre:" + getNombre());
         System.out.println("Apellido:" + getApellido());
@@ -26,6 +27,6 @@ public class Productor extends Persona {
    // public void registrarProduccion(Discografica discografica, Produccion produccion) {
    // discografica.agregarProduccion(produccion);
    //}
-    
+
     
 }
