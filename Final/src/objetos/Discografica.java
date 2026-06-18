@@ -170,7 +170,13 @@ public class Discografica {
     public ArrayList<Produccion> getProducciones() {
         return producciones;
     }
-
+    //aparece el STREAM y las opciones p1, p1 (lambda) 
+    //y la referencia al metodo produccion:mostrarInfo
+    public void mostrarOrdenadasStream() {
+    producciones.stream()
+            .sorted((p1, p2) -> p1.getTitulo().compareToIgnoreCase(p2.getTitulo()))
+            .forEach(Produccion::mostrarInfo);
+    }
     public void setProducciones(ArrayList<Produccion> producciones) {
         this.producciones = producciones;
     }
@@ -194,4 +200,5 @@ public class Discografica {
     public HashSet<Persona> getArtistasActivos() {
     return artistasActivos;
     }
+
 }
