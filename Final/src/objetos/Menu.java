@@ -25,6 +25,8 @@ public class Menu {
             System.out.println("5. Mostrar producciones publicadas");
             System.out.println("6. Mostrar catálogo ordenado por título");
             System.out.println("0. Salir");
+            System.out.println("Ingrese la opcion deseada:");
+
 
             opcion = scanner.nextInt();
             scanner.nextLine();
