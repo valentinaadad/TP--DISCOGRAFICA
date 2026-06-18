@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,11 +13,13 @@ public class Discografica {
     private ArrayList<Produccion> producciones;
     private HashMap<Integer, Persona> personas;
     private IRepositorio repositorio;
+    private HashSet<Persona> artistasActivos;
 
     public Discografica() {
         this.producciones = new ArrayList<>();
         this.personas = new HashMap<>();
         this.repositorio = new Repositorio();
+        this.artistasActivos = new HashSet<>();
     }
 
     // REGISTRAR
@@ -82,7 +85,7 @@ public class Discografica {
 
     // Publicar produccion
     public void publicarProduccion(String titulo) {
-
+        //usnado el hashset en artistas con producciones publicadas activas, evita duplicados
         Produccion produccion = buscarProduccion(titulo);
 
         if (produccion == null) {
@@ -91,6 +94,19 @@ public class Discografica {
         }
 
         produccion.publicar();
+
+        // agregar artista a activos (si corresponde)
+        for (Persona p : personas.values()) {
+            if (p instanceof Artista) {
+
+                Artista a = (Artista) p;
+
+                if (a.getProducciones().contains(produccion)) {
+                    artistasActivos.add(a); // HashSet evita duplicados automáticamente
+                }
+            }
+        }
+
         System.out.println("Producción publicada correctamente.");
     }
 
@@ -149,7 +165,8 @@ public class Discografica {
             producciones = new ArrayList<>();
         }
     }
-    //GET Y SET
+
+    // GET Y SET
     public ArrayList<Produccion> getProducciones() {
         return producciones;
     }
@@ -172,5 +189,9 @@ public class Discografica {
 
     public void setRepositorio(IRepositorio repositorio) {
         this.repositorio = repositorio;
+    }
+
+    public HashSet<Persona> getArtistasActivos() {
+    return artistasActivos;
     }
 }
