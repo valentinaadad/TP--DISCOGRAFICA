@@ -24,9 +24,9 @@ public class Productor extends Persona {
         System.out.println("Estudio: " + getEstudio());
     }
 
-   // public void registrarProduccion(Discografica discografica, Produccion produccion) {
-   // discografica.agregarProduccion(produccion);
-   //}
+    public void registrarProduccion(Discografica discografica, Produccion produccion) {
+        discografica.agregarProduccion(produccion);
+   }
 
     
 }
