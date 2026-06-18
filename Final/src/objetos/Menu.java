@@ -108,7 +108,7 @@ public class Menu {
 
         Produccion produccion = null;
 
-        if (tipo == 1) {
+        if(tipo == 1){
             System.out.println("Ingrese cantidad de pistas:");
             int cantidadPistas = scanner.nextInt();
 
@@ -118,7 +118,7 @@ public class Menu {
 
             produccion = new Album(id, titulo, genero, anio, cantidadPistas, duracionTotal);
 
-        } else if (tipo == 2) {
+        } else if (tipo == 2){
             System.out.println("Ingrese duración:");
             double duracion = scanner.nextDouble();
 
