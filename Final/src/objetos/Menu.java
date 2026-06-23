@@ -14,7 +14,7 @@ public class Menu {
     }
 
     public void iniciar() {
-        int opcion;
+        int opcion =-1;
 
         do {
             System.out.println("\n-------- MENÚ --------");
@@ -28,7 +28,15 @@ public class Menu {
             System.out.println("Ingrese la opcion deseada:");
 
 
-            opcion = scanner.nextInt();
+            //valida que se ingrese un numero entero
+            if (scanner.hasNextInt()){
+                opcion = scanner.nextInt();
+            }else{
+                System.out.println("Debe ingresar una opcion valida");
+                scanner.next(); // limpia la entrada invalida
+                continue;
+            }
+            
             scanner.nextLine();
 
             switch (opcion) {
@@ -100,7 +108,7 @@ public class Menu {
         String titulo = scanner.nextLine();
 
         System.out.println("Ingrese género:");
-        String genero = scanner.nextLine();
+        String genero =scanner.nextLine();
 
         System.out.println("Ingrese año:");
         int anio = scanner.nextInt();
@@ -120,7 +128,7 @@ public class Menu {
 
         } else if (tipo == 2){
             System.out.println("Ingrese duración:");
-            double duracion = scanner.nextDouble();
+            double duracion =scanner.nextDouble();
 
             System.out.println("¿Es colaboración? true/false:");
             boolean esColaboracion = scanner.nextBoolean();
